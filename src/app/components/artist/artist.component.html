@@ -1,0 +1,72 @@
+<div *ngIf="artist">
+
+  <div class="container">
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1"><img src="{{artist.images[0].url}}" /></div>
+              <div class="tab-pane" id="pic-2"><img src="{{artist.images[1].url}}" /></div>
+              <div class="tab-pane" id="pic-3"><img src="{{artist.images[2].url}}" /></div>
+
+            </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{artist.images[0].url}}" /></a></li>
+              <li><a data-target="#pic-2" data-toggle="tab"><img src="{{artist.images[1].url}}" /></a></li>
+              <li><a data-target="#pic-3" data-toggle="tab"><img src="{{artist.images[2].url}}" /></a></li>
+            </ul>
+
+          </div>
+          <div class="details col-md-6">
+            <h3 class="product-title">{{artist.name}}</h3>
+            <div class="rating">
+              <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+              <span class="review-no">{{artist.followers.total}} Followers</span>
+            </div>
+            <h4 class="price">Popularity: <span>{{artist.popularity}}</span></h4>
+            <h5 class="sizes">Genres:
+              <span class="size"  title="small" *ngFor="let genres of artist.genres">{{genres}}</span>
+
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+        <h1>Albums of {{artist.name}}</h1>
+        <ul class="event-list">
+          <li *ngFor="let album of albums">
+            <img alt="Independence Day" src="{{album.images[0].url}}" />
+            <div class="info">
+              <h2 class="title">{{album.name}}</h2>
+            </div>
+            <div class="social">
+              <ul>
+                <li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+                <li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+                <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+
+</div>
